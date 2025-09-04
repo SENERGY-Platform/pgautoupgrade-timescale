@@ -1,9 +1,9 @@
-name: 'Docker Image v17'
+name: 'Docker Image'
 
 on:
   push:
     tags:
-      - 'v17+.[0-9]+'
+      - '*'
   workflow_dispatch:
 
 jobs:
@@ -41,5 +41,5 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
-            smartenergyplatform/pgautoupgrade-timescale:17
-            ghcr.io/senergy-platform/pgautoupgrade-timescale:17
+            smartenergyplatform/pgautoupgrade-timescale:${{ github.ref_name }}
+            ghcr.io/senergy-platform/pgautoupgrade-timescale:${{ github.ref_name }}
