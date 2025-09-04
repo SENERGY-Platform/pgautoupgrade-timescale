@@ -15,18 +15,23 @@ RUN --mount=type=bind,from=pg17,source=/etc/alternatives,target=/mnt/pg17_etc_al
 # Copy extensions and binaries for postgresql 17
 COPY --from=pg17 /usr/lib/postgresql/17 /usr/lib/postgresql/17
 COPY --from=pg17 /usr/share/postgresql/17 /usr/share/postgresql/17
+COPY --from=pg17 /etc/alternatives/postgresql-17* /etc/alternatives/
 # Copy all extensions and binaries for postgresql 16
 COPY --from=pg16 /usr/lib/postgresql/16 /usr/lib/postgresql/16
 COPY --from=pg16 /usr/share/postgresql/16 /usr/share/postgresql/16
+COPY --from=pg16 /etc/alternatives/postgresql-16* /etc/alternatives/
 # Copy all extensions and binaries for postgresql 15
 COPY --from=pg15 /usr/lib/postgresql/15 /usr/lib/postgresql/15
 COPY --from=pg15 /usr/share/postgresql/15 /usr/share/postgresql/15
+COPY --from=pg15 /etc/alternatives/postgresql-15* /etc/alternatives/
 # Copy all extensions and binaries for postgresql 14
 COPY --from=pg14 /usr/lib/postgresql/14 /usr/lib/postgresql/14
 COPY --from=pg14 /usr/share/postgresql/14 /usr/share/postgresql/14
+COPY --from=pg14 /etc/alternatives/postgresql-14* /etc/alternatives/
 # Copy all extensions and binaries for postgresql 13
 COPY --from=pg13 /usr/lib/postgresql/13 /usr/lib/postgresql/13
 COPY --from=pg13 /usr/share/postgresql/13 /usr/share/postgresql/13
+COPY --from=pg13 /etc/alternatives/postgresql-13* /etc/alternatives/
 
 # Create symlinks for each version (except latest)
 RUN rm -rf /usr/local-pg16 /usr/local-pg15 /usr/local-pg14 /usr/local-pg13 /usr/local-pg17 \
