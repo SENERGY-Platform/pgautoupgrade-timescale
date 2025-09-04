@@ -36,7 +36,7 @@ RUN rm -rf /usr/local-pg16 /usr/local-pg15 /usr/local-pg14 /usr/local-pg13 /usr/
     && ln -s /usr/lib/postgresql/13 /usr/local-pg13
 
 ENV \
-    PGTARGET=17 \
+    PGTARGET=16 \
     PGDATA=/var/lib/postgresql/data
 WORKDIR /var/lib/postgresql
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
