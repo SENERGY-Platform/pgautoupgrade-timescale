@@ -29,10 +29,11 @@ COPY --from=pg13 /usr/lib/postgresql/13 /usr/lib/postgresql/13
 COPY --from=pg13 /usr/share/postgresql/13 /usr/share/postgresql/13
 
 # Create symlinks for each version (except latest)
-RUN rm -rf /usr/local-pg16 /usr/local-pg15 /usr/local-pg14 /usr/local-pg17 \
+RUN rm -rf /usr/local-pg16 /usr/local-pg15 /usr/local-pg14 /usr/local-pg13 /usr/local-pg17 \
     && ln -s /usr/lib/postgresql/16 /usr/local-pg16 \
     && ln -s /usr/lib/postgresql/15 /usr/local-pg15 \
-    && ln -s /usr/lib/postgresql/14 /usr/local-pg14
+    && ln -s /usr/lib/postgresql/14 /usr/local-pg14 \
+    && ln -s /usr/lib/postgresql/13 /usr/local-pg13
 
 ENV \
     PGTARGET=17 \
