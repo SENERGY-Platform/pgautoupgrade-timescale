@@ -37,6 +37,7 @@ RUN rm -rf /usr/local-pg16 /usr/local-pg15 /usr/local-pg14 /usr/local-pg13 /usr/
 
 ENV \
     PGTARGET=16 \
+    PATH=/usr/lib/postgresql/${PGTARGET}/bin:${PATH} \
     PGDATA=/var/lib/postgresql/data
 WORKDIR /var/lib/postgresql
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
