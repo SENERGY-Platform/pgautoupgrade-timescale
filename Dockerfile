@@ -40,7 +40,7 @@ COPY --from=pg13 /etc/alternatives/postgresql-13* /etc/alternatives/
 
 # Create symlinks for each version (except latest)
 RUN rm -rf /usr/local-pg16 /usr/local-pg15 /usr/local-pg14 /usr/local-pg13 /usr/local-pg17 /usr/local-pg18 \
-    && ln -s /usr/lib/postgresql/16 /usr/local-pg17 \
+    && ln -s /usr/lib/postgresql/17 /usr/local-pg17 \
     && ln -s /usr/lib/postgresql/16 /usr/local-pg16 \
     && ln -s /usr/lib/postgresql/15 /usr/local-pg15 \
     && ln -s /usr/lib/postgresql/14 /usr/local-pg14 \
