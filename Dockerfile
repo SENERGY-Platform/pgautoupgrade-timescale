@@ -11,7 +11,7 @@ RUN --mount=type=bind,from=pg18,source=/usr/lib,target=/mnt/pg18_lib \
     cp -rn /mnt/pg18_lib/* /usr/lib/
 
 RUN --mount=type=bind,from=pg18,source=/etc/alternatives,target=/mnt/pg18_etc_alternatives \
-    cp -rn /mnt/pg18_etc_alternatives/postgresql-17-* /etc/alternatives/ || true
+    cp -rn /mnt/pg18_etc_alternatives/postgresql-18-* /etc/alternatives/ || true
 
 # Copy extensions and binaries for postgresql 18
 COPY --from=pg18 /usr/lib/postgresql/18 /usr/lib/postgresql/18
