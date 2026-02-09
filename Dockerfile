@@ -47,9 +47,7 @@ RUN rm -rf /usr/local-pg16 /usr/local-pg15 /usr/local-pg14 /usr/local-pg13 /usr/
     && ln -s /usr/lib/postgresql/13 /usr/local-pg13
 
 # Copy timescaledb libs from 17 to 18: some missing in 18
-COPY --from=pg17 /usr/lib/postgresql/17/lib/timescaledb-2.22* /usr/lib/postgresql/18/lib/
-COPY --from=pg17 /usr/lib/postgresql/17/lib/timescaledb-tsl-2.22* /usr/lib/postgresql/18/lib/
-COPY --from=pg17 /usr/lib/postgresql/17/lib/timescaledb_toolkit-1.21* /usr/lib/postgresql/18/lib/
+COPY --from=pg17 /usr/lib/postgresql/17/lib/timescaledb-* /usr/lib/postgresql/18/lib/
 
 ENV \
     PGTARGET=18 \
