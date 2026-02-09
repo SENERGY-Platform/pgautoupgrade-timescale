@@ -2,7 +2,7 @@ FROM timescale/timescaledb-ha:pg13 AS pg13
 FROM timescale/timescaledb-ha:pg14 AS pg14
 FROM timescale/timescaledb-ha:pg15 AS pg15
 FROM timescale/timescaledb-ha:pg16 AS pg16
-FROM timescale/timescaledb-ha:pg17 AS pg17
+FROM timescale/timescaledb-ha:pg17-ts2.25 AS pg17
 FROM timescale/timescaledb-ha:pg18-ts2.25 AS pg18
 FROM pgautoupgrade/pgautoupgrade:18-debian AS pgautoupgrade
 
