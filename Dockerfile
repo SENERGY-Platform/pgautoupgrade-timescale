@@ -14,7 +14,8 @@ COPY --from=pg18 /usr/share/postgresql /usr/share/postgresql
 COPY --from=pg18 /etc/alternatives/postgresql-* /etc/alternatives/
 
 # Copy timescaledb libs from 17 to 18: some missing in 18
-RUN cp /usr/lib/postgresql/17/lib/timescaledb-* /usr/lib/postgresql/18/lib
+RUN cp /usr/lib/postgresql/17/lib/timescaledb-2.22* /usr/lib/postgresql/18/lib
+RUN cp /usr/lib/postgresql/17/lib/timescaledb_toolkit-1.21* /usr/lib/postgresql/18/lib
 
 ENV \
     PGTARGET=18 \
